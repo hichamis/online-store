@@ -14,9 +14,9 @@
                 <div class="card-body">
                     <h5 class="card-title">تصفية حسب القسم</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <a href="{{ url_for('list_products') }}" class="btn btn-outline-primary">الكل</a>
+                        <a href="{{ url_for('products') }}" class="btn btn-outline-primary">الكل</a>
                         {% for cat in categories %}
-                        <a href="{{ url_for('list_products_by_category', category_id=cat.id) }}" 
+                        <a href="{{ url_for('products_by_category', category_id=cat.id) }}" 
                            class="btn btn-outline-primary">{{ cat.name }}</a>
                         {% endfor %}
                     </div>
@@ -27,68 +27,28 @@
     {% endif %}
 
     <!-- Products Grid -->
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for product in products %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                {% if product.image_filename %}
-                <img src="{{ url_for('static', filename='uploads/' + product.image_filename) }}" 
-                     class="card-img-top" alt="{{ product.name }}">
-                {% else %}
-                <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" 
-                     class="card-img-top" alt="صورة افتراضية">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description[:100] }}...</p>
-                    <p class="card-text">
-                        <strong>السعر: </strong>{{ product.selling_price }} دج
-                        {% if product.category %}
-                        <br>
-                        <small class="text-muted">القسم: {{ product.category.name }}</small>
+        <div class="col">
+            <div class="card h-100 product-card">
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-decoration-none">
+                    <!-- عرض الصورة الرئيسية فقط -->
+                    <div class="card-img-wrapper">
+                        {% if product.primary_image %}
+                        <img src="{{ url_for('static', filename='uploads/' + product.primary_image) }}"
+                             class="card-img-top product-image"
+                             alt="{{ product.name }}">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='uploads/images.jpg') }}"
+                             class="card-img-top product-image"
+                             alt="صورة افتراضية">
                         {% endif %}
-                    </p>
-                    <a href="{{ url_for('product_detail', product_id=product.id) }}" 
-                       class="btn btn-primary">عرض التفاصيل</a>
-                    {% if current_user.is_authenticated and current_user.is_admin %}
-                    <a href="{{ url_for('edit_product', product_id=product.id) }}" class="btn btn-warning">تعديل</a>
-                    <button onclick="deleteProduct({{ product.id }})" class="btn btn-danger">حذف</button>
-                    {% else %}
-                    {% if product.stock > 0 %}
-                    <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
-                        {% if product.sizes %}
-                        <div class="mb-2">
-                            <select name="size" class="form-select form-select-sm" required>
-                                <option value="">اختر المقاس</option>
-                                {% for size in product.available_sizes %}
-                                <option value="{{ size }}">{{ size }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        {% endif %}
-                        
-                        {% if product.colors %}
-                        <div class="mb-2">
-                            <select name="color" class="form-select form-select-sm" required>
-                                <option value="">اختر اللون</option>
-                                {% for color in product.available_colors %}
-                                <option value="{{ color }}">{{ color }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        {% endif %}
-                        
-                        <div class="d-flex justify-content-between align-items-center">
-                            <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}" 
-                                   class="form-control form-control-sm" style="width: 70px;">
-                            <button type="submit" class="btn btn-primary">أضف للسلة</button>
-                        </div>
-                    </form>
-                    {% else %}
-                    <p class="text-danger">نفذت الكمية</p>
-                    {% endif %}
-                    {% endif %}
-                </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title product-title">{{ product.name }}</h5>
+                        <p class="card-text product-price">{{ "%.2f"|format(product.selling_price) }} {{ settings.currency }}</p>
+                    </div>
+                </a>
             </div>
         </div>
         {% else %}

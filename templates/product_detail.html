@@ -11,20 +11,39 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="product-image-container">
-                <img src="{{ get_product_image(product) }}" 
-                     class="img-fluid rounded product-image" 
-                     alt="{{ product.name }}">
+            <div class="product-gallery">
+                <!-- Main Image -->
+                <div class="main-image-container">
+                    <img src="{{ url_for('static', filename='uploads/' + product.primary_image) if product.primary_image else url_for('static', filename='images/default.jpg') }}" 
+                         class="main-product-image" 
+                         id="main-product-image"
+                         alt="{{ product.name }}">
+                </div>
+
+                <!-- Thumbnail Images -->
+                {% if product.images %}
+                <div class="product-thumbnails">
+                    {% for image in product.images %}
+                    <div class="thumbnail-wrapper">
+                        <img src="{{ url_for('static', filename='uploads/' + image.filename) }}"
+                             class="product-thumbnail"
+                             onclick="changeMainImage('{{ url_for('static', filename='uploads/' + image.filename) }}')"
+                             alt="{{ product.name }} - صورة {{ loop.index }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url_for('index') }}">الرئيسية</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url_for('products') }}">المنتجات</a></li>
                     {% if product.category %}
-                    <li class="breadcrumb-item"><a href="{{ url_for('list_products_by_category', category_id=product.category.id) }}">{{ product.category.name }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url_for('products_by_category', category_id=product.category.id) }}">{{ product.category.name }}</a></li>
                     {% endif %}
-                    <li class="breadcrumb-item active">{{ product.name }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
                 </ol>
             </nav>
 
@@ -53,17 +72,6 @@
                 <i class="fas fa-check-circle me-1"></i>
                 متوفر في المخزون
             </div>
-            
-            {% if product.images|length > 1 %}
-            <div class="product-thumbnails mt-3">
-                {% for image in product.images %}
-                <img src="{{ url_for('static', filename='uploads/' + image.filename) }}"
-                     class="img-thumbnail product-thumb {% if image.is_primary %}active{% endif %}"
-                     alt="{{ product.name }} - صورة {{ loop.index }}"
-                     onclick="changeMainImage(this.src)">
-                {% endfor %}
-            </div>
-            {% endif %}
             
             <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#orderModal">
                 <i class="fas fa-shopping-cart me-2"></i>
@@ -214,76 +222,36 @@
         </div>
     </div>
 </div>
+
+<script>
+function changeMainImage(imageSrc) {
+    // تحديث الصورة الرئيسية
+    const mainImage = document.getElementById('main-product-image');
+    mainImage.src = imageSrc;
+    
+    // تحديث حالة الصور المصغرة
+    const thumbnails = document.querySelectorAll('.thumbnail-wrapper');
+    thumbnails.forEach(thumb => {
+        const thumbImg = thumb.querySelector('img');
+        if (thumbImg.src === imageSrc) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+}
+
+// تفعيل الصورة الأولى عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    const firstThumbnail = document.querySelector('.thumbnail-wrapper');
+    if (firstThumbnail) {
+        firstThumbnail.classList.add('active');
+    }
+});
+</script>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
 <script src="{{ url_for('static', filename='js/rating.js') }}"></script>
-<script>
-function changeMainImage(src) {
-    document.querySelector('.product-image').src = src;
-    document.querySelectorAll('.product-thumb').forEach(thumb => {
-        thumb.classList.remove('active');
-        if (thumb.src === src) {
-            thumb.classList.add('active');
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Star Rating System
-    const ratingInputs = document.querySelectorAll('.rating-input input');
-    const ratingLabels = document.querySelectorAll('.rating-input label img');
-
-    ratingInputs.forEach((input, index) => {
-        input.addEventListener('change', () => {
-            const rating = input.value;
-            ratingLabels.forEach((label, i) => {
-                if (i < rating) {
-                    label.src = "{{ url_for('static', filename='ico/str1.png') }}";
-                } else {
-                    label.src = "{{ url_for('static', filename='ico/str2.png') }}";
-                }
-            });
-        });
-    });
-
-    const ratingStars = document.querySelectorAll('.rating-stars img');
-    ratingStars.forEach(star => {
-        star.addEventListener('click', () => {
-            const rating = star.dataset.rating;
-            ratingStars.forEach(s => {
-                if (s.dataset.rating >= rating) {
-                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
-                } else {
-                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
-                }
-            });
-            document.querySelector('#rating').value = rating;
-        });
-
-        star.addEventListener('mouseover', () => {
-            const rating = star.dataset.rating;
-            ratingStars.forEach(s => {
-                if (s.dataset.rating >= rating) {
-                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
-                } else {
-                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
-                }
-            });
-        });
-
-        star.addEventListener('mouseout', () => {
-            const currentRating = document.querySelector('#rating').value;
-            ratingStars.forEach(s => {
-                if (s.dataset.rating >= currentRating) {
-                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
-                } else {
-                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
-                }
-            });
-        });
-    });
-});
-</script>
 {% endblock %}

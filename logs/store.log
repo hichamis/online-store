@@ -103,3 +103,861 @@ Traceback (most recent call last):
     raise NotFound()
 werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
  [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-17 21:52:39,041 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 21:52:50,983 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.env != "development":
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:00,019 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 21:54:25,332 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:25,753 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:29,629 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:30,026 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:32,044 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:32,400 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:33,917 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:54:34,230 ERROR: خطأ غير متوقع: 'Flask' object has no attribute 'env'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 41, in before_request
+    if not request.is_secure and app.debug is False:
+                                 ^^^^^^^
+AttributeError: 'Flask' object has no attribute 'env'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:55:41,842 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 21:55:43,255 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 21:58:37,687 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 21:58:37,890 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 22:01:35,125 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 22:01:36,719 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:244]
+2024-12-17 22:01:50,905 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 22:01:51,027 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:256]
+2024-12-17 22:07:09,402 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:245]
+2024-12-17 22:07:09,403 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:245]
+2024-12-17 22:07:23,296 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:245]
+2024-12-17 22:07:24,643 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:245]
+2024-12-17 22:08:51,664 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:08:51,672 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:08:51,705 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:09:20,133 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:09:20,134 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:09:20,146 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:09:44,458 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:09:45,707 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:11:18,744 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:11:20,006 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:12:23,279 INFO: محاولة تسجيل دخول للمستخدم: admin [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:552]
+2024-12-17 22:12:23,283 INFO: نتيجة البحث عن المستخدم: <User 1> [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:559]
+2024-12-17 22:13:52,392 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:13:53,702 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:15:13,154 INFO: Successfully uploaded image: 1_4.jpg [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:161]
+2024-12-17 22:24:56,469 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in list_products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 62, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:26:10,234 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in list_products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 60, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:26:52,805 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in list_products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 60, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:29:35,672 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:29:36,841 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:32:24,014 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in list_products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 66, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:32:53,341 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in list_products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 66, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:33:43,454 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:34:09,842 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:34:11,044 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:34:20,385 ERROR: خطأ غير متوقع: Could not build url for endpoint 'list_products'. Did you mean 'edit_product' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 838, in products
+    return render_template('products.html', products=products)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 95, in top-level template code
+    <a class="nav-link {% if request.endpoint == 'list_products' %}active{% endif %}" href="{{ url_for('list_products') }}">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'list_products'. Did you mean 'edit_product' instead?
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:37:09,207 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:37:10,490 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:37:23,277 ERROR: خطأ غير متوقع: Could not build url for endpoint 'list_products'. Did you mean 'edit_product' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 838, in products
+    return render_template('products.html', products=products)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 17, in block 'content'
+    <a href="{{ url_for('list_products') }}" class="btn btn-outline-primary">الكل</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'list_products'. Did you mean 'edit_product' instead?
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:38:14,299 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:39:01,506 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:39:02,793 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:39:41,793 ERROR: خطأ غير متوقع: 'settings' is undefined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 839, in products
+    return render_template('products.html', products=products, categories=categories)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\base.html", line 180, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 66, in block 'content'
+    <span class="price-currency">{{ settings.currency }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'settings' is undefined
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:40:37,719 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:44:07,022 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:44:07,942 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:44:33,136 ERROR: خطأ غير متوقع: Could not build url for endpoint 'list_products_by_category' with values ['category_id']. Did you mean 'products_by_category' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 305, in product_detail
+    return render_template('product_detail.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 70, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 25, in block 'content'
+    <li class="breadcrumb-item"><a href="{{ url_for('list_products_by_category', category_id=product.category.id) }}">{{ product.category.name }}</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'list_products_by_category' with values ['category_id']. Did you mean 'products_by_category' instead?
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:44:54,389 ERROR: خطأ غير متوقع: Could not build url for endpoint 'list_products_by_category' with values ['category_id']. Did you mean 'products_by_category' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 305, in product_detail
+    return render_template('product_detail.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 70, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 25, in block 'content'
+    <li class="breadcrumb-item"><a href="{{ url_for('list_products_by_category', category_id=product.category.id) }}">{{ product.category.name }}</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'list_products_by_category' with values ['category_id']. Did you mean 'products_by_category' instead?
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 22:45:24,312 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:45:25,193 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:49:57,550 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:49:58,421 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:57:57,795 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 22:59:38,724 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:02:50,929 ERROR: خطأ غير متوقع: 'models.Product object' has no attribute 'price'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 312, in product_detail
+    return render_template('product_detail.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 70, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 49, in block 'content'
+    <span class="amount">{{ "%.2f"|format(product.price) }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\filters.py", line 1030, in do_format
+    return soft_str(value) % (kwargs or args)
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+jinja2.exceptions.UndefinedError: 'models.Product object' has no attribute 'price'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:03:14,409 ERROR: خطأ غير متوقع: 'models.Product object' has no attribute 'price'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 312, in product_detail
+    return render_template('product_detail.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 70, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 49, in block 'content'
+    <span class="amount">{{ "%.2f"|format(product.price) }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\filters.py", line 1030, in do_format
+    return soft_str(value) % (kwargs or args)
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+jinja2.exceptions.UndefinedError: 'models.Product object' has no attribute 'price'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:03:52,928 ERROR: خطأ غير متوقع: 'models.Product object' has no attribute 'price'
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 312, in product_detail
+    return render_template('product_detail.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 70, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 49, in block 'content'
+    <span class="amount">{{ "%.2f"|format(product.price) }}</span>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\filters.py", line 1030, in do_format
+    return soft_str(value) % (kwargs or args)
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+jinja2.exceptions.UndefinedError: 'models.Product object' has no attribute 'price'
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:05:47,889 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 23:07:59,151 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:08:25,862 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 23:12:23,467 ERROR: خطأ غير متوقع: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 849, in products
+    return render_template('products.html', products=products, categories=categories, settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 54, in template
+    {% empty %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:12:30,042 ERROR: خطأ غير متوقع: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 849, in products
+    return render_template('products.html', products=products, categories=categories, settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 54, in template
+    {% empty %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:14:44,257 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 23:14:45,234 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 23:14:54,147 ERROR: خطأ غير متوقع: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\OneDrive\Desktop\projects\app.py", line 849, in products
+    return render_template('products.html', products=products, categories=categories, settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\hicha\OneDrive\Desktop\projects\templates\products.html", line 54, in template
+    {% empty %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'empty'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:261]
+2024-12-17 23:16:39,653 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]
+2024-12-17 23:16:40,719 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:249]

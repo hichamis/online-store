@@ -18,7 +18,7 @@ from io import StringIO
 import traceback
 import codecs
 
-app = Flask(__name__, static_folder='static', static_url_path='/static')
+app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key-here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///store.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -29,6 +29,18 @@ app.config['WTF_CSRF_TIME_LIMIT'] = 3600
 csrf = CSRFProtect()
 csrf.init_app(app)
 
+# تكوين المجلدات
+app.static_folder = 'static'
+app.static_url_path = '/static'
+
+# تكوين مجلدات الرفع
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
+app.config['IMAGES_FOLDER'] = os.path.join(app.root_path, 'static', 'images')
+
+# إنشاء المجلدات إذا لم تكن موجودة
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+os.makedirs(app.config['IMAGES_FOLDER'], exist_ok=True)
+
 # تكوين أنواع الملفات المسموح بها
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -38,7 +50,7 @@ def allowed_file(filename):
 
 @app.before_request
 def before_request():
-    if not request.is_secure and app.env != "development":
+    if not request.is_secure and app.debug is False:
         url = request.url.replace("http://", "https://", 1)
         return redirect(url, code=301)
 
@@ -60,53 +72,46 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 # تكوين الصور والمجلدات
-STATIC_FOLDER = os.path.join(app.root_path, 'static')
-UPLOADS_FOLDER = os.path.join(STATIC_FOLDER, 'uploads')
-IMAGES_FOLDER = os.path.join(STATIC_FOLDER, 'images')
-
-app.config['UPLOAD_FOLDER'] = UPLOADS_FOLDER
 app.config['DEFAULT_PRODUCT_IMAGE'] = 'images/default-product.jpg'
 app.config['DEFAULT_SLIDE_IMAGE'] = 'images/default-slide.jpg'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
 
-# إنشاء المجلدات إذا لم تكن موجودة
-for folder in [STATIC_FOLDER, UPLOADS_FOLDER, IMAGES_FOLDER]:
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-        print(f"تم إنشاء المجلد: {folder}")
-
 # إنشاء الصور الافتراضية إذا لم تكن موجودة
 def create_default_image(filename, width=800, height=600, color='gray', text="No Image Available"):
     """إنشاء صورة افتراضية بالأبعاد والنص المحددين"""
-    filepath = os.path.join(IMAGES_FOLDER, filename)
-    if not os.path.exists(filepath) or os.path.getsize(filepath) < 100:  # إعادة إنشاء الصورة إذا كان حجمها أقل من 100 بايت
+    filepath = os.path.join(app.config['IMAGES_FOLDER'], filename)
+    
+    # تخطي إنشاء الصورة إذا كانت موجودة
+    if os.path.exists(filepath):
+        return
+    
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+        img = Image.new('RGB', (width, height), color)
+        draw = ImageDraw.Draw(img)
+        
+        # حساب حجم النص
+        font_size = min(width, height) // 20
         try:
-            from PIL import Image, ImageDraw, ImageFont
-            img = Image.new('RGB', (width, height), color)
-            draw = ImageDraw.Draw(img)
-            
-            # حساب حجم النص
-            font_size = min(width, height) // 20
-            try:
-                font = ImageFont.truetype("arial.ttf", font_size)
-            except:
-                font = ImageFont.load_default()
-            
-            # وضع النص في وسط الصورة
-            text_bbox = draw.textbbox((0, 0), text, font=font)
-            text_width = text_bbox[2] - text_bbox[0]
-            text_height = text_bbox[3] - text_bbox[1]
-            x = (width - text_width) / 2
-            y = (height - text_height) / 2
-            
-            # رسم النص
-            draw.text((x, y), text, fill="white", font=font)
-            
-            # حفظ الصورة
-            img.save(filepath, quality=95)
-            app.logger.info(f"تم إنشاء الصورة الافتراضية: {filepath}")
-        except Exception as e:
-            app.logger.error(f"خطأ في إنشاء الصورة الافتراضية {filename}: {str(e)}")
+            font = ImageFont.truetype("arial.ttf", font_size)
+        except:
+            font = ImageFont.load_default()
+        
+        # وضع النص في وسط الصورة
+        text_bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = text_bbox[2] - text_bbox[0]
+        text_height = text_bbox[3] - text_bbox[1]
+        x = (width - text_width) / 2
+        y = (height - text_height) / 2
+        
+        # رسم النص
+        draw.text((x, y), text, fill="white", font=font)
+        
+        # حفظ الصورة
+        img.save(filepath, quality=95)
+        app.logger.info(f"تم إنشاء الصورة الافتراضية: {filepath}")
+    except Exception as e:
+        app.logger.error(f"خطأ في إنشاء الصورة الافتراضية {filename}: {str(e)}")
 
 # إنشاء الصور الافتراضية
 create_default_image('default-product.jpg', text="No Product Image")
@@ -297,7 +302,16 @@ def index():
 @app.route('/product/<int:product_id>')
 def product_detail(product_id):
     product = Product.query.get_or_404(product_id)
-    return render_template('product_detail.html', product=product)
+    settings = Settings.query.first()
+    
+    # تأكد من أن product.images موجودة وليست فارغة
+    if not product.images:
+        # إذا لم تكن هناك صور، أضف الصورة الرئيسية إلى القائمة
+        product.images = [{'filename': product.primary_image}] if product.primary_image else []
+    
+    return render_template('product_detail.html', 
+                         product=product,
+                         settings=settings)
 
 @app.route('/product/<int:product_id>/review', methods=['POST'])
 def add_review(product_id):
@@ -828,17 +842,19 @@ def manage_products():
                          settings=settings)
 
 @app.route('/products')
-def list_products():
+def products():
     products = Product.query.all()
     categories = Category.query.all()
-    return render_template('products.html', products=products, categories=categories)
+    settings = Settings.query.first()
+    return render_template('products.html', products=products, categories=categories, settings=settings)
 
 @app.route('/products/category/<int:category_id>')
-def list_products_by_category(category_id):
+def products_by_category(category_id):
     category = Category.query.get_or_404(category_id)
     products = Product.query.filter_by(category_id=category_id).all()
-    categories = Category.query.all()  # Add this to show category filter
-    return render_template('products.html', products=products, categories=categories, category=category)
+    categories = Category.query.all()
+    settings = Settings.query.first()
+    return render_template('products.html', products=products, category=category, categories=categories, settings=settings)
 
 @app.route('/admin/product/delete/<int:product_id>', methods=['POST'])
 @login_required
@@ -1782,6 +1798,14 @@ def check_users():
         users = User.query.all()
         return jsonify([{'id': user.id, 'username': user.username, 'is_admin': user.is_admin} for user in users])
     return 'Not available in production', 403
+
+@app.route('/static/images/<path:filename>')
+def serve_image(filename):
+    return send_from_directory(app.config['IMAGES_FOLDER'], filename)
+
+@app.route('/static/uploads/<path:filename>')
+def serve_upload(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
     with app.app_context():
