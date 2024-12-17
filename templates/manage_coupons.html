@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}إدارة الكوبونات{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">إدارة الكوبونات</h2>
+
+    <!-- نموذج إضافة كوبون جديد -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">إضافة كوبون جديد</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('add_coupon') }}">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="code" class="form-label">كود الكوبون</label>
+                        <input type="text" class="form-control" id="code" name="code" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="discount" class="form-label">نسبة الخصم (%)</label>
+                        <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="valid_from" class="form-label">تاريخ البداية</label>
+                        <input type="datetime-local" class="form-control" id="valid_from" name="valid_from" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="valid_until" class="form-label">تاريخ الانتهاء</label>
+                        <input type="datetime-local" class="form-control" id="valid_until" name="valid_until" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">إضافة الكوبون</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- قائمة الكوبونات -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">قائمة الكوبونات</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>كود الكوبون</th>
+                            <th>نسبة الخصم</th>
+                            <th>تاريخ البداية</th>
+                            <th>تاريخ الانتهاء</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for coupon in coupons %}
+                        <tr>
+                            <td>{{ coupon.code }}</td>
+                            <td>{{ coupon.discount }}%</td>
+                            <td>{{ coupon.valid_from.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ coupon.valid_until.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>
+                                {% if coupon.is_valid() %}
+                                <span class="badge bg-success">صالح</span>
+                                {% else %}
+                                <span class="badge bg-danger">منتهي</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <form method="POST" action="{{ url_for('toggle_coupon', coupon_id=coupon.id) }}" class="d-inline">
+                                    <button type="submit" class="btn btn-sm {% if coupon.is_active %}btn-warning{% else %}btn-success{% endif %}">
+                                        {% if coupon.is_active %}تعطيل{% else %}تفعيل{% endif %}
+                                    </button>
+                                </form>
+                                <form method="POST" action="{{ url_for('delete_coupon', coupon_id=coupon.id) }}" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('هل أنت متأكد من حذف هذا الكوبون؟')">حذف</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- إضافة CSS مخصص -->
+<style>
+    .table th {
+        text-align: right;
+    }
+</style>
+{% endblock %}

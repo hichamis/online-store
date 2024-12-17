@@ -1,0 +1,246 @@
+{% extends "admin_base.html" %}
+
+{% block title %}لوحة التحكم{% endblock %}
+
+{% block admin_content %}
+<div class="container-fluid py-4">
+    <!-- إحصائيات سريعة -->
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="text-muted mb-2">إجمالي المبيعات</h6>
+                            <h3 class="mb-0">{{ total_sales|round(2) }} {{ settings.currency }}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat text-primary">
+                                <i class="fas fa-shopping-cart fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="text-muted mb-2">عدد الطلبات</h6>
+                            <h3 class="mb-0">{{ total_orders }}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat text-success">
+                                <i class="fas fa-box fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="text-muted mb-2">عدد المنتجات</h6>
+                            <h3 class="mb-0">{{ total_products }}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat text-info">
+                                <i class="fas fa-tshirt fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="text-muted mb-2">عدد المستخدمين</h6>
+                            <h3 class="mb-0">{{ total_users }}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat text-warning">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الرسوم البيانية -->
+    <div class="row mb-4">
+        <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">المبيعات الشهرية</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="monthlySalesChart" style="height: 300px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="card border-0 shadow">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">حالة الطلبات</h5>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="orderStatusChart" style="height: 300px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- آخر الطلبات -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">آخر الطلبات</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>اسم العميل</th>
+                                    <th>المنتج</th>
+                                    <th>السعر</th>
+                                    <th>الحالة</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in recent_orders %}
+                                <tr>
+                                    <td>#{{ order.id }}</td>
+                                    <td>{{ order.customer_name }}</td>
+                                    <td>{{ order.product.name }}</td>
+                                    <td>{{ order.total_price }} {{ settings.currency }}</td>
+                                    <td>
+                                        <span class="badge bg-{{ 'success' if order.status == 'delivered' else 'warning' if order.status == 'processing' else 'info' if order.status == 'shipped' else 'secondary' }}">
+                                            {{ order.status }}
+                                        </span>
+                                    </td>
+                                    <td>{{ order.order_date.strftime('%Y-%m-%d') }}</td>
+                                    <td>
+                                        <a href="{{ url_for('admin_update_order', order_id=order.id) }}" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // المبيعات الشهرية
+    var monthlySalesCtx = document.getElementById('monthlySalesChart').getContext('2d');
+    new Chart(monthlySalesCtx, {
+        type: 'line',
+        data: {
+            labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+            datasets: [{
+                label: 'المبيعات',
+                data: {{ months|tojson }},
+                fill: true,
+                backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                borderColor: 'rgb(13, 110, 253)',
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // حالة الطلبات
+    var orderStatusCtx = document.getElementById('orderStatusChart').getContext('2d');
+    new Chart(orderStatusCtx, {
+        type: 'doughnut',
+        data: {
+            labels: {{ status_labels|tojson }},
+            datasets: [{
+                data: {{ status_data|tojson }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
+
+<style>
+.stat {
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stat.text-primary {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+.stat.text-success {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+.stat.text-info {
+    background-color: rgba(13, 202, 240, 0.1);
+}
+.stat.text-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+</style>
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">إعدادات المتجر</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('manage_settings') }}">
+                {{ form.csrf_token }}
+                <div class="row">
+                    <!-- معلومات المتجر الأساسية -->
+                    <div class="col-md-6 mb-4">
+                        <h4 class="mb-3">معلومات المتجر الأساسية</h4>
+                        <div class="mb-3">
+                            <label for="store_name" class="form-label">اسم المتجر</label>
+                            <input type="text" class="form-control" id="store_name" name="store_name" value="{{ settings.store_name }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="store_phone" class="form-label">رقم الهاتف</label>
+                            <input type="text" class="form-control" id="store_phone" name="store_phone" value="{{ settings.store_phone }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="store_email" class="form-label">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="store_email" name="store_email" value="{{ settings.store_email }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="store_address" class="form-label">العنوان</label>
+                            <textarea class="form-control" id="store_address" name="store_address" rows="2">{{ settings.store_address }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="currency" class="form-label">العملة</label>
+                            <input type="text" class="form-control" id="currency" name="currency" value="{{ settings.currency }}" required>
+                        </div>
+                    </div>
+
+                    <!-- إعدادات الألوان -->
+                    <div class="col-md-6 mb-4">
+                        <h4 class="mb-3">تخصيص الألوان</h4>
+                        <div class="mb-3">
+                            <label for="primary_color" class="form-label">اللون الرئيسي (القوائم والأزرار)</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="primary_color" name="primary_color" value="{{ settings.primary_color }}" title="اختر اللون الرئيسي">
+                                <input type="text" class="form-control" value="{{ settings.primary_color }}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="secondary_color" class="form-label">اللون الثانوي (الخلفية)</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="secondary_color" name="secondary_color" value="{{ settings.secondary_color }}" title="اختر اللون الثانوي">
+                                <input type="text" class="form-control" value="{{ settings.secondary_color }}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="accent_color" class="form-label">لون التأكيد (النجاح)</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="accent_color" name="accent_color" value="{{ settings.accent_color }}" title="اختر لون التأكيد">
+                                <input type="text" class="form-control" value="{{ settings.accent_color }}" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="text_color" class="form-label">لون النصوص</label>
+                            <div class="input-group">
+                                <input type="color" class="form-control form-control-color" id="text_color" name="text_color" value="{{ settings.text_color }}" title="اختر لون النصوص">
+                                <input type="text" class="form-control" value="{{ settings.text_color }}" readonly>
+                            </div>
+                        </div>
+                        
+                        <!-- معاينة الألوان -->
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">معاينة الألوان</h5>
+                                <div id="color-preview" class="p-3 rounded" style="background-color: var(--bs-light);">
+                                    <button class="btn mb-2" id="preview-primary">زر رئيسي</button>
+                                    <button class="btn mb-2" id="preview-secondary">زر ثانوي</button>
+                                    <button class="btn mb-2" id="preview-accent">زر التأكيد</button>
+                                    <p id="preview-text" class="mb-0">هذا نص تجريبي لمعاينة لون النصوص</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">حفظ الإعدادات</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// تحديث معاينة الألوان مباشرة
+function updateColorPreview() {
+    const primaryColor = document.getElementById('primary_color').value;
+    const secondaryColor = document.getElementById('secondary_color').value;
+    const accentColor = document.getElementById('accent_color').value;
+    const textColor = document.getElementById('text_color').value;
+
+    document.getElementById('preview-primary').style.backgroundColor = primaryColor;
+    document.getElementById('preview-primary').style.color = '#ffffff';
+    
+    document.getElementById('preview-secondary').style.backgroundColor = secondaryColor;
+    document.getElementById('preview-secondary').style.color = '#ffffff';
+    
+    document.getElementById('preview-accent').style.backgroundColor = accentColor;
+    document.getElementById('preview-accent').style.color = '#ffffff';
+    
+    document.getElementById('preview-text').style.color = textColor;
+}
+
+// تحديث قيمة النص عند تغيير اللون
+document.querySelectorAll('input[type="color"]').forEach(input => {
+    input.addEventListener('input', function() {
+        this.nextElementSibling.value = this.value;
+        updateColorPreview();
+    });
+});
+
+// تحديث المعاينة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', updateColorPreview);
+</script>
+{% endblock %}

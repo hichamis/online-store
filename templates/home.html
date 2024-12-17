@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='uploads/' + product.image_filename) }}" 
+                     class="card-img-top product-card-image" 
+                     alt="{{ product.name }}"
+                     onerror="this.src='{{ url_for('static', filename='images/placeholder.jpg') }}'">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text text-truncate">{{ product.description }}</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="h5 mb-0 text-primary">{{ "%.2f"|format(product.selling_price) }} دج</span>
+                        {% if product.stock > 0 %}
+                            <span class="badge bg-success">متوفر في المخزون ({{ product.stock }})</span>
+                        {% else %}
+                            <span class="badge bg-danger">غير متوفر</span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('product_detail', product_id=product.id) }}" 
+                           class="btn btn-outline-primary">
+                            <i class="fas fa-info-circle"></i>
+                            التفاصيل
+                        </a>
+                        {% if product.stock > 0 %}
+                        <a href="{{ url_for('order_product', product_id=product.id) }}" 
+                           class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            اطلب الآن
+                        </a>
+                        {% else %}
+                        <button class="btn btn-secondary" disabled>
+                            <i class="fas fa-times-circle"></i>
+                            غير متوفر
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+.product-card-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.text-truncate {
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3em;
+}
+</style>
+{% endblock %}

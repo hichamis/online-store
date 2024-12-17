@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طباعة الطلب #{{ order.id }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+        .order-details {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .company-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .order-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .order-table th,
+        .order-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .total-section {
+            margin-top: 20px;
+            border-top: 2px solid #000;
+            padding-top: 10px;
+        }
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="no-print mb-3">
+            <button onclick="window.print()" class="btn btn-primary">
+                <i class="bi bi-printer"></i> طباعة
+            </button>
+            <a href="{{ url_for('admin_orders') }}" class="btn btn-secondary">
+                <i class="bi bi-arrow-right"></i> رجوع
+            </a>
+        </div>
+
+        <div class="company-header">
+            <h2>متجر الملابس</h2>
+            <p>فاتورة طلب</p>
+        </div>
+
+        <div class="order-details">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>تفاصيل العميل</h4>
+                    <p><strong>الاسم:</strong> {{ order.customer_name }}</p>
+                    <p><strong>الهاتف:</strong> {{ order.customer_phone }}</p>
+                    <p><strong>العنوان:</strong> {{ order.customer_address }}</p>
+                </div>
+                <div class="col-md-6 text-start">
+                    <h4>تفاصيل الطلب</h4>
+                    <p><strong>رقم الطلب:</strong> #{{ order.id }}</p>
+                    <p><strong>تاريخ الطلب:</strong> {{ order.order_date.strftime('%Y-%m-%d %H:%M') }}</p>
+                    <p><strong>حالة الطلب:</strong> 
+                        {% if order.status == 'pending' %}قيد الانتظار
+                        {% elif order.status == 'processing' %}قيد المعالجة
+                        {% elif order.status == 'shipped' %}تم الشحن
+                        {% elif order.status == 'delivered' %}تم التسليم
+                        {% elif order.status == 'cancelled' %}ملغي
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>المقاس</th>
+                    <th>اللون</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>المجموع</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ order.product.name }}</td>
+                    <td>{{ order.size }}</td>
+                    <td>{{ order.color }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ "%.2f"|format(order.product.selling_price) }} دج</td>
+                    <td>{{ "%.2f"|format(order.total_price) }} دج</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-section">
+            <div class="row">
+                <div class="col-md-6 offset-md-6">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td><strong>المجموع الكلي:</strong></td>
+                            <td class="text-start">{{ "%.2f"|format(order.total_price) }} دج</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <p class="text-center">شكراً لتسوقكم من متجرنا</p>
+            <p class="text-center">للاستفسار: {{ order.customer_phone }}</p>
+        </div>
+    </div>
+
+    <script>
+        // طباعة تلقائية عند فتح الصفحة
+        window.onload = function() {
+            // window.print();
+        }
+    </script>
+</body>
+</html>

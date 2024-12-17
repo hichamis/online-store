@@ -1,0 +1,148 @@
+{% extends "admin_base.html" %}
+
+{% block admin_content %}
+<div class="container-fluid py-4">
+    <h2 class="mb-4">التقارير والإحصائيات</h2>
+
+    <!-- المبيعات الشهرية -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">المبيعات الشهرية</h6>
+        </div>
+        <div class="card-body">
+            <div class="chart-area">
+                <canvas id="monthlySalesChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- المنتجات الأكثر مبيعاً -->
+        <div class="col-xl-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">المنتجات الأكثر مبيعاً</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>المنتج</th>
+                                    <th>الكمية المباعة</th>
+                                    <th>إجمالي المبيعات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in top_products %}
+                                <tr>
+                                    <td>{{ product.name }}</td>
+                                    <td>{{ product.total_quantity }}</td>
+                                    <td>{{ "%.2f"|format(product.total_sales) }} دج</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- حالة الطلبات -->
+        <div class="col-xl-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">حالة الطلبات</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2">
+                        <canvas id="orderStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- زر تصدير البيانات -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="{{ url_for('export_orders') }}" class="btn btn-success">
+                <i class="fas fa-file-export"></i>
+                تصدير جميع الطلبات
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // بيانات المبيعات الشهرية
+    const monthlySalesData = {
+        labels: [{% for sale in monthly_sales %}'{{ sale.month }}'{% if not loop.last %}, {% endif %}{% endfor %}],
+        datasets: [{
+            label: 'المبيعات',
+            data: [{% for sale in monthly_sales %}{{ sale.total_sales }}{% if not loop.last %}, {% endif %}{% endfor %}],
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }, {
+            label: 'الأرباح',
+            data: [{% for sale in monthly_sales %}{{ sale.total_profit }}{% if not loop.last %}, {% endif %}{% endfor %}],
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.1
+        }]
+    };
+
+    // بيانات حالة الطلبات
+    const orderStatusData = {
+        labels: [{% for status in order_status %}'{{ status.status }}'{% if not loop.last %}, {% endif %}{% endfor %}],
+        datasets: [{
+            data: [{% for status in order_status %}{{ status.count }}{% if not loop.last %}, {% endif %}{% endfor %}],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)'
+            ]
+        }]
+    };
+
+    // إنشاء الرسم البياني للمبيعات الشهرية
+    const monthlySalesChart = new Chart(
+        document.getElementById('monthlySalesChart'),
+        {
+            type: 'line',
+            data: monthlySalesData,
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'المبيعات والأرباح الشهرية'
+                    }
+                }
+            }
+        }
+    );
+
+    // إنشاء الرسم البياني لحالة الطلبات
+    const orderStatusChart = new Chart(
+        document.getElementById('orderStatusChart'),
+        {
+            type: 'pie',
+            data: orderStatusData,
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'توزيع حالات الطلبات'
+                    }
+                }
+            }
+        }
+    );
+</script>
+{% endblock %}

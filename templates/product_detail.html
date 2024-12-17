@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rating.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="product-image-container">
+                <img src="{{ get_product_image(product) }}" 
+                     class="img-fluid rounded product-image" 
+                     alt="{{ product.name }}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('index') }}">الرئيسية</a></li>
+                    {% if product.category %}
+                    <li class="breadcrumb-item"><a href="{{ url_for('list_products_by_category', category_id=product.category.id) }}">{{ product.category.name }}</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-item active">{{ product.name }}</li>
+                </ol>
+            </nav>
+
+            <h1 class="product-title">{{ product.name }}</h1>
+            
+            <div class="product-rating mb-3">
+                {% for i in range(5) %}
+                    {% if i < product.average_rating %}
+                        <img src="{{ url_for('static', filename='ico/str1.png') }}" alt="نجمة">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='ico/str2.png') }}" alt="نجمة فارغة">
+                    {% endif %}
+                {% endfor %}
+                <span class="ms-2">({{ product.reviews|length }} تقييم)</span>
+            </div>
+
+            <p class="product-description">{{ product.description }}</p>
+            
+            <div class="product-price">
+                <span class="price-value">{{ "%.2f"|format(product.selling_price) }}</span>
+                <span class="price-currency">دج</span>
+            </div>
+            
+            {% if product.stock > 0 %}
+            <div class="availability-badge available mb-4">
+                <i class="fas fa-check-circle me-1"></i>
+                متوفر في المخزون
+            </div>
+            
+            {% if product.images|length > 1 %}
+            <div class="product-thumbnails mt-3">
+                {% for image in product.images %}
+                <img src="{{ url_for('static', filename='uploads/' + image.filename) }}"
+                     class="img-thumbnail product-thumb {% if image.is_primary %}active{% endif %}"
+                     alt="{{ product.name }} - صورة {{ loop.index }}"
+                     onclick="changeMainImage(this.src)">
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#orderModal">
+                <i class="fas fa-shopping-cart me-2"></i>
+                طلب الآن
+            </button>
+            {% else %}
+            <div class="availability-badge unavailable mb-4">
+                <i class="fas fa-times-circle me-1"></i>
+                غير متوفر حالياً
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="mb-4">تقييمات العملاء</h2>
+            
+            <!-- Add Review Form -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">أضف تقييمك</h5>
+                    <form action="{{ url_for('add_review', product_id=product.id) }}" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">الاسم</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">التقييم</label>
+                            <div class="rating-stars">
+                                <input type="hidden" name="rating" id="rating" value="0">
+                                {% for i in range(1, 6) %}
+                                <img src="{{ url_for('static', filename='ico/str2.png') }}" alt="نجمة" data-rating="{{ i }}" class="star-img">
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">التعليق</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">إرسال التقييم</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Reviews List -->
+            {% if product.reviews %}
+            <div class="reviews-list">
+                {% for review in product.reviews|sort(attribute='created_at', reverse=true) %}
+                <div class="card review-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">{{ review.name }}</h5>
+                            <div class="rating">
+                                {% for i in range(5) %}
+                                    {% if i < review.rating %}
+                                        <img src="{{ url_for('static', filename='ico/str1.png') }}" alt="نجمة">
+                                    {% else %}
+                                        <img src="{{ url_for('static', filename='ico/str2.png') }}" alt="نجمة فارغة">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="review-meta">
+                            {{ review.created_at.strftime('%Y-%m-%d') }}
+                        </div>
+                        <div class="review-content">
+                            {{ review.comment }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                لا توجد تقييمات بعد. كن أول من يقيم هذا المنتج!
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Order Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">طلب المنتج</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ url_for('order_product', product_id=product.id) }}" class="order-form">
+                    <div class="mb-3">
+                        <label for="customer_name" class="form-label">الاسم الكامل</label>
+                        <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customer_phone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" class="form-control" id="customer_phone" name="customer_phone" 
+                               pattern="[0-9]{10}" title="الرجاء إدخال رقم هاتف صحيح" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="customer_address" class="form-label">العنوان</label>
+                        <textarea class="form-control" id="customer_address" name="customer_address" rows="3" required></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="size" class="form-label">
+                                <i class="fas fa-ruler me-1"></i>
+                                المقاس
+                            </label>
+                            <select class="form-select" id="size" name="size" required>
+                                {% for size in product.sizes.split(',') %}
+                                <option value="{{ size.strip() }}">{{ size.strip() }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="color" class="form-label">
+                                <i class="fas fa-palette me-1"></i>
+                                اللون
+                            </label>
+                            <select class="form-select" id="color" name="color" required>
+                                {% for color in product.colors.split(',') %}
+                                <option value="{{ color.strip() }}">{{ color.strip() }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="quantity" class="form-label">
+                            <i class="fas fa-shopping-basket me-1"></i>
+                            الكمية
+                        </label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" 
+                               min="1" max="{{ product.stock }}" value="1" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="fas fa-shopping-cart me-2"></i>
+                        تأكيد الطلب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/rating.js') }}"></script>
+<script>
+function changeMainImage(src) {
+    document.querySelector('.product-image').src = src;
+    document.querySelectorAll('.product-thumb').forEach(thumb => {
+        thumb.classList.remove('active');
+        if (thumb.src === src) {
+            thumb.classList.add('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Star Rating System
+    const ratingInputs = document.querySelectorAll('.rating-input input');
+    const ratingLabels = document.querySelectorAll('.rating-input label img');
+
+    ratingInputs.forEach((input, index) => {
+        input.addEventListener('change', () => {
+            const rating = input.value;
+            ratingLabels.forEach((label, i) => {
+                if (i < rating) {
+                    label.src = "{{ url_for('static', filename='ico/str1.png') }}";
+                } else {
+                    label.src = "{{ url_for('static', filename='ico/str2.png') }}";
+                }
+            });
+        });
+    });
+
+    const ratingStars = document.querySelectorAll('.rating-stars img');
+    ratingStars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.dataset.rating;
+            ratingStars.forEach(s => {
+                if (s.dataset.rating >= rating) {
+                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
+                } else {
+                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
+                }
+            });
+            document.querySelector('#rating').value = rating;
+        });
+
+        star.addEventListener('mouseover', () => {
+            const rating = star.dataset.rating;
+            ratingStars.forEach(s => {
+                if (s.dataset.rating >= rating) {
+                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
+                } else {
+                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
+                }
+            });
+        });
+
+        star.addEventListener('mouseout', () => {
+            const currentRating = document.querySelector('#rating').value;
+            ratingStars.forEach(s => {
+                if (s.dataset.rating >= currentRating) {
+                    s.src = "{{ url_for('static', filename='ico/str1.png') }}";
+                } else {
+                    s.src = "{{ url_for('static', filename='ico/str2.png') }}";
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

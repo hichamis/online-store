@@ -1,0 +1,82 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">إضافة منتج جديد</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    {{ form.name.label(class="form-label") }}
+                    {{ form.name(class="form-control") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.category_id.label(class="form-label") }}
+                    {{ form.category_id(class="form-control") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.description.label(class="form-label") }}
+                    {{ form.description(class="form-control") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.purchase_price.label(class="form-label") }}
+                    {{ form.purchase_price(class="form-control", step="0.01") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.selling_price.label(class="form-label") }}
+                    {{ form.selling_price(class="form-control", step="0.01") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.stock.label(class="form-label") }}
+                    {{ form.stock(class="form-control") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.sizes.label(class="form-label") }}
+                    {{ form.sizes(class="form-control") }}
+                    <small class="form-text text-muted">المقاسات مفصولة بفواصل</small>
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.colors.label(class="form-label") }}
+                    {{ form.colors(class="form-control") }}
+                    <small class="form-text text-muted">الألوان مفصولة بفواصل</small>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">صور المنتج</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">الصورة الرئيسية:</label>
+                            {{ form.primary_image(class="form-control", accept="image/*") }}
+                            <small class="form-text text-muted">اختر الصورة الرئيسية للمنتج</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">صور إضافية:</label>
+                            {{ form.additional_images(class="form-control", multiple=True, accept="image/*") }}
+                            <small class="form-text text-muted">يمكنك اختيار عدة صور إضافية للمنتج</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            {{ form.submit(class="btn btn-primary") }}
+            <a href="{{ url_for('manage_products') }}" class="btn btn-secondary">إلغاء</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

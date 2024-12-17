@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ store_settings.store_name }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        :root {
+            --primary-color: {{ store_settings.primary_color }};
+            --secondary-color: {{ store_settings.secondary_color }};
+            --accent-color: {{ store_settings.accent_color }};
+            --text-color: {{ store_settings.text_color }};
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color);
+        }
+
+        .navbar-dark {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-success {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .alert-success {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .card {
+            border-color: var(--secondary-color);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .product-card {
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="bi bi-shop me-2"></i>
+                {{ store_settings.store_name }}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">
+                            <i class="bi bi-house-door me-1"></i>
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'list_products' %}active{% endif %}" href="{{ url_for('list_products') }}">
+                            <i class="bi bi-grid me-1"></i>
+                            المنتجات
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    {% if current_user.is_authenticated and current_user.is_admin %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-gear me-1"></i>
+                            لوحة التحكم
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('admin_dashboard') }}">
+                                <i class="bi bi-speedometer2"></i>لوحة التحكم</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ url_for('manage_orders') }}">
+                                <i class="bi bi-cart"></i>إدارة الطلبات</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ url_for('manage_products') }}">
+                                <i class="bi bi-box"></i>إدارة المنتجات</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ url_for('manage_categories') }}">
+                                <i class="bi bi-folder"></i>إدارة الأقسام</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ url_for('manage_settings') }}">
+                                <i class="bi bi-gear"></i>الإعدادات</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link cart-icon {% if request.endpoint == 'view_cart' %}active{% endif %}" href="{{ url_for('view_cart') }}">
+                            <i class="bi bi-cart3"></i>
+                            {% if session.cart and session.cart.items()|length > 0 %}
+                            <span class="cart-badge">{{ session.cart.items()|length }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item dropdown user-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i>
+                            {{ current_user.username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('admin_profile') }}">
+                                <i class="bi bi-person"></i>الملف الشخصي</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">
+                                <i class="bi bi-box-arrow-left"></i>تسجيل الخروج</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'login' %}active{% endif %}" href="{{ url_for('login') }}">
+                            <i class="bi bi-box-arrow-in-right me-1"></i>
+                            تسجيل الدخول
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="container mt-4">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- معلومات المتجر -->
+                <div class="col-md-4 mb-4">
+                    <h5>{{ store_settings.store_name }}</h5>
+                    <p>نقدم أفضل الملابس العربية التقليدية والعصرية بأعلى جودة وأفضل الأسعار.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- روابط سريعة -->
+                <div class="col-md-4 mb-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('index') }}" class="text-light">الرئيسية</a></li>
+                        <li><a href="{{ url_for('list_products') }}" class="text-light">المنتجات</a></li>
+                        <li><a href="#" class="text-light">من نحن</a></li>
+                        <li><a href="#" class="text-light">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- معلومات الاتصال -->
+                <div class="col-md-4 mb-4">
+                    <h5>اتصل بنا</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> {{ store_settings.store_address }}</li>
+                        <li><i class="bi bi-telephone"></i> {{ store_settings.store_phone }}</li>
+                        <li><i class="bi bi-envelope"></i> {{ store_settings.store_email }}</li>
+                        <li><i class="bi bi-clock"></i>نعمل من السبت إلى الخميس: 9 صباحاً - 9 مساءً</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- حقوق النشر -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <hr>
+                    <p>&copy; {{ now.year }} {{ store_settings.store_name }}. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

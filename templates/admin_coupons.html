@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">إدارة الكوبونات</h2>
+
+    <!-- Add Coupon Button -->
+    <div class="mb-4">
+        <a href="{{ url_for('add_coupon') }}" class="btn btn-primary">إضافة كوبون جديد</a>
+    </div>
+
+    <!-- Coupons Table -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>الكود</th>
+                    <th>نسبة الخصم</th>
+                    <th>تاريخ البدء</th>
+                    <th>تاريخ الانتهاء</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for coupon in coupons %}
+                <tr>
+                    <td>{{ coupon.code }}</td>
+                    <td>{{ coupon.discount }}%</td>
+                    <td>{{ coupon.valid_from.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ coupon.valid_until.strftime('%Y-%m-%d') }}</td>
+                    <td>
+                        {% if coupon.is_active %}
+                        <span class="badge bg-success">نشط</span>
+                        {% else %}
+                        <span class="badge bg-danger">غير نشط</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if coupon.is_active %}
+                        <form action="{{ url_for('deactivate_coupon', coupon_id=coupon.id) }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-warning btn-sm" 
+                                    onclick="return confirm('هل أنت متأكد من إلغاء تفعيل هذا الكوبون؟')">
+                                إلغاء التفعيل
+                            </button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" class="text-center">لا توجد كوبونات حالياً</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

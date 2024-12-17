@@ -1,0 +1,55 @@
+{% extends "admin_base.html" %}
+
+{% block title %}تحديث الطلب{% endblock %}
+
+{% block admin_content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">تحديث حالة الطلب #{{ order.id }}</h2>
+                    
+                    <form method="POST">
+                        {{ form.csrf_token }}
+                        
+                        <div class="mb-3">
+                            {{ form.status.label(class="form-label") }}
+                            {{ form.status(class="form-select") }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.payment_status.label(class="form-label") }}
+                            {{ form.payment_status(class="form-select") }}
+                        </div>
+                        
+                        <div class="d-grid">
+                            {{ form.submit(class="btn btn-primary") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Order Details -->
+            <div class="card mt-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">تفاصيل الطلب</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>اسم العميل:</strong> {{ order.customer_name }}</p>
+                            <p><strong>رقم الهاتف:</strong> {{ order.customer_phone }}</p>
+                            <p><strong>العنوان:</strong> {{ order.shipping_address }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>المنتج:</strong> {{ order.product.name }}</p>
+                            <p><strong>الكمية:</strong> {{ order.quantity }}</p>
+                            <p><strong>السعر:</strong> {{ order.total_price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Slider Section -->
+<div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        {% for slide in slides %}
+        <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="{{ loop.index0 }}" 
+                {% if loop.first %}class="active"{% endif %}></button>
+        {% endfor %}
+    </div>
+    <div class="carousel-inner">
+        {% for slide in slides %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <img src="{{ get_slide_image(slide) }}" class="d-block w-100" alt="{{ slide.title }}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ slide.title }}</h5>
+                <p>{{ slide.description }}</p>
+                {% if slide.link %}
+                <a href="{{ slide.link }}" class="btn btn-primary">المزيد</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">السابق</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">التالي</span>
+    </button>
+</div>
+
+<!-- Featured Products Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">منتجات مميزة</h2>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ get_product_image(product) }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description[:100] }}...</p>
+                    <p class="card-text"><strong>السعر: </strong>{{ product.selling_price }} {{ store_settings.currency }}</p>
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

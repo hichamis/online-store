@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">إضافة سلايد جديد</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                
+                <div class="mb-3">
+                    <label for="title" class="form-label">العنوان</label>
+                    {{ form.title(class="form-control", id="title") }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">الوصف</label>
+                    {{ form.description(class="form-control", id="description") }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="link" class="form-label">الرابط</label>
+                    {{ form.link(class="form-control", id="link") }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="order" class="form-label">الترتيب</label>
+                    {{ form.order(class="form-control", id="order") }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">الصورة</label>
+                    {{ form.image(class="form-control", id="image") }}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form.active(class="form-check-input", id="active") }}
+                    <label class="form-check-label" for="active">نشط</label>
+                </div>
+
+                <div class="text-center">
+                    {{ form.submit(class="btn btn-primary") }}
+                    <a href="{{ url_for('manage_slides') }}" class="btn btn-secondary">إلغاء</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

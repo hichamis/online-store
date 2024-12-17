@@ -1,0 +1,399 @@
+2024-12-15 22:22:39,142 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:22:40,039 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:22:59,277 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:24:27,089 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:24:55,705 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:24:56,714 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:27:03,938 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:28:12,532 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:28:49,020 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:28:49,981 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:28:55,880 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:30:38,889 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:30:39,259 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:30:40,760 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:30:43,203 ERROR: خطأ غير متوقع: name 'settings' is not defined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\project2\app.py", line 648, in manage_orders
+    settings=settings)
+             ^^^^^^^^
+NameError: name 'settings' is not defined
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:30:45,395 ERROR: خطأ غير متوقع: name 'settings' is not defined
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\project2\app.py", line 648, in manage_orders
+    settings=settings)
+             ^^^^^^^^
+NameError: name 'settings' is not defined
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:194]
+2024-12-15 22:31:04,031 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:31:04,994 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:182]
+2024-12-15 22:41:38,190 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:41:38,607 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:41:39,290 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:41:39,557 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:41:39,571 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:41:39,795 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:42:11,579 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:42:12,890 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:42:54,369 ERROR: خطأ غير متوقع: Could not build url for endpoint 'admin_orders'. Did you mean 'admin_update_order' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\project2\app.py", line 721, in admin_update_order
+    return redirect(url_for('admin_orders'))
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 222, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_orders'. Did you mean 'admin_update_order' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:222]
+2024-12-15 22:45:26,874 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-15 22:45:30,034 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-15 22:45:49,125 ERROR: خطأ غير متوقع: Could not build url for endpoint 'admin_orders'. Did you mean 'admin_update_order' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "app.py", line 721, in admin_update_order
+    return redirect(url_for('admin_orders'))
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 222, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_orders'. Did you mean 'admin_update_order' instead?
+ [in app.py:222]
+2024-12-15 22:46:42,614 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-15 22:47:14,223 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-15 22:47:17,221 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-15 22:54:39,540 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:54:40,807 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 22:54:58,790 ERROR: خطأ في لوحة التحكم: Could not build url for endpoint 'home'. Did you mean 'admin_index' instead? [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:631]
+2024-12-15 22:55:02,760 ERROR: خطأ في لوحة التحكم: Could not build url for endpoint 'home'. Did you mean 'admin_index' instead? [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:631]
+2024-12-15 22:55:15,002 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:222]
+2024-12-15 22:55:15,031 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:222]
+2024-12-15 22:55:38,086 ERROR: خطأ في لوحة التحكم: Could not build url for endpoint 'home'. Did you mean 'admin_index' instead? [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:631]
+2024-12-15 23:00:02,358 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 23:00:03,602 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 23:04:29,205 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 23:04:30,484 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\project2\app.py:210]
+2024-12-15 23:29:10,358 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-15 23:29:11,733 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-15 23:29:16,600 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:03,206 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:03,400 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:14,788 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:15,008 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:25,875 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-15 23:30:26,095 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]

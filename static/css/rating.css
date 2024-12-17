@@ -1,0 +1,39 @@
+.rating-stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.rating-stars img {
+    width: 12px;
+    height: 12px;
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+.rating-stars img:hover,
+.rating-stars img:hover ~ img {
+    content: url('../ico/str1.png');
+}
+
+.review-card {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-card .rating img {
+    width: 10px;
+    height: 10px;
+    margin: 0 1px;
+}
+
+.review-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-content {
+    margin-top: 0.5rem;
+}

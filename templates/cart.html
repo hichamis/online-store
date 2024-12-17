@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">سلة التسوق</h2>
+    
+    {% if cart_items %}
+    <div class="row">
+        <!-- Cart Items -->
+        <div class="col-md-8">
+            {% for item in cart_items %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {% if item.product.image_filename %}
+                        <img src="{{ url_for('static', filename='uploads/' + item.product.image_filename) }}" 
+                             class="img-fluid rounded-start" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/default-product.jpg') }}" 
+                             class="img-fluid rounded-start" alt="{{ item.product.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.product.name }}</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {% if item.size %}المقاس: {{ item.size }}{% endif %}
+                                    {% if item.color %}| اللون: {{ item.color }}{% endif %}
+                                </small>
+                            </p>
+                            <p class="card-text">السعر: {{ item.product.selling_price }} {{ settings.currency }}</p>
+                            
+                            <!-- Quantity Update Form -->
+                            <form action="{{ url_for('update_cart', product_id=item.product.id) }}" 
+                                  method="POST" class="d-flex align-items-center mb-2">
+                                <input type="number" name="quantity" value="{{ item.quantity }}" 
+                                       min="1" max="{{ item.product.stock }}" 
+                                       class="form-control form-control-sm me-2" style="width: 70px;">
+                                <button type="submit" class="btn btn-sm btn-outline-primary me-2">تحديث</button>
+                                <a href="{{ url_for('remove_from_cart', product_id=item.product.id) }}" 
+                                   class="btn btn-sm btn-outline-danger">حذف</a>
+                            </form>
+                            
+                            <p class="card-text">
+                                <strong>المجموع: {{ item.subtotal }} {{ settings.currency }}</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- Cart Actions -->
+            <div class="d-flex justify-content-between mb-4">
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                    متابعة التسوق
+                </a>
+                <a href="{{ url_for('clear_cart') }}" class="btn btn-outline-danger">
+                    تفريغ السلة
+                </a>
+            </div>
+        </div>
+        
+        <!-- Order Summary and Checkout Form -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">ملخص الطلب</h5>
+                    
+                    <!-- Coupon Form -->
+                    <div class="mb-3">
+                        <label for="coupon_code" class="form-label">كود الخصم</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="coupon_code" name="coupon_code" 
+                                   placeholder="أدخل كود الخصم">
+                            <button type="button" class="btn btn-outline-primary" id="apply-coupon">تطبيق</button>
+                        </div>
+                        <div id="coupon-message"></div>
+                    </div>
+                    
+                    <!-- Price Summary -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>المجموع الفرعي:</span>
+                            <span data-total="{{ total }}">{{ total }} {{ settings.currency }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2" id="discount-row" style="display: none;">
+                            <span>الخصم:</span>
+                            <span id="discount-amount">0 {{ settings.currency }}</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="d-flex justify-content-between">
+                            <span>المجموع النهائي:</span>
+                            <span id="final-total">{{ total }} {{ settings.currency }}</span>
+                        </div>
+                        
+                        <!-- Hidden input for coupon -->
+                        <input type="hidden" id="applied_coupon" name="applied_coupon" value="">
+                    </div>
+                    
+                    <!-- Checkout Form -->
+                    <form action="{{ url_for('cart_checkout') }}" method="POST" class="mt-4">
+                        <div class="mb-3">
+                            <label for="customer_name" class="form-label">الاسم</label>
+                            <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customer_phone" class="form-label">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="customer_phone" name="customer_phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customer_address" class="form-label">العنوان</label>
+                            <textarea class="form-control" id="customer_address" name="customer_address" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">إتمام الطلب</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        سلة التسوق فارغة. <a href="{{ url_for('index') }}">تصفح المنتجات</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+{% endblock %}

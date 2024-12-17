@@ -1,0 +1,202 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">تعديل المنتج</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    {{ form.name.label(class="form-label") }}
+                    {{ form.name(class="form-control", value=product.name) }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.category_id.label(class="form-label") }}
+                    {{ form.category_id(class="form-control") }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.description.label(class="form-label") }}
+                    {{ form.description(class="form-control", rows=3, value=product.description) }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.purchase_price.label(class="form-label") }}
+                    {{ form.purchase_price(class="form-control", type="number", step="0.01", value="%.2f"|format(product.purchase_price)) }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.selling_price.label(class="form-label") }}
+                    {{ form.selling_price(class="form-control", type="number", step="0.01", value="%.2f"|format(product.selling_price)) }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.stock.label(class="form-label") }}
+                    {{ form.stock(class="form-control", type="number", value=product.stock) }}
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.sizes.label(class="form-label") }}
+                    {{ form.sizes(class="form-control", value=product.sizes) }}
+                    <small class="form-text text-muted">المقاسات مفصولة بفواصل</small>
+                </div>
+                
+                <div class="form-group mb-3">
+                    {{ form.colors.label(class="form-label") }}
+                    {{ form.colors(class="form-control", value=product.colors) }}
+                    <small class="form-text text-muted">الألوان مفصولة بفواصل</small>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">صور المنتج</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- عرض الصور الحالية -->
+                        <div class="mb-4">
+                            <h6>الصور الحالية:</h6>
+                            <div class="row" id="current-images">
+                                {% for image in product.images %}
+                                <div class="col-4 mb-3" id="image-{{ image.id }}">
+                                    <div class="position-relative">
+                                        <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" 
+                                             class="img-thumbnail w-100" alt="صورة المنتج">
+                                        <div class="position-absolute top-0 end-0 p-2">
+                                            {% if not image.is_primary %}
+                                            <button type="button" 
+                                                    class="btn btn-sm btn-primary make-primary-btn" 
+                                                    data-image-id="{{ image.id }}"
+                                                    title="تعيين كصورة رئيسية">
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            {% endif %}
+                                            <button type="button" 
+                                                    class="btn btn-sm btn-danger delete-image-btn" 
+                                                    data-image-id="{{ image.id }}"
+                                                    {% if image.is_primary and product.images|length == 1 %}disabled{% endif %}
+                                                    title="حذف الصورة">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                        {% if image.is_primary %}
+                                        <span class="badge bg-primary position-absolute bottom-0 start-0 m-2">
+                                            رئيسية
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <!-- رفع صور جديدة -->
+                        <div class="mb-3">
+                            <label class="form-label">صورة رئيسية جديدة:</label>
+                            {{ form.primary_image(class="form-control") }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">صور إضافية:</label>
+                            {{ form.additional_images(class="form-control", multiple=True) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            {{ form.submit(class="btn btn-primary", value="حفظ التغييرات") }}
+            <a href="{{ url_for('manage_products') }}" class="btn btn-secondary">إلغاء</a>
+        </div>
+    </form>
+</div>
+
+<!-- JavaScript for image management -->
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // حذف الصورة
+    document.querySelectorAll('.delete-image-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const imageId = this.dataset.imageId;
+            const productId = {{ product.id }};
+            
+            if (confirm('هل أنت متأكد من حذف هذه الصورة؟')) {
+                fetch(`/admin/product/${productId}/image/${imageId}/delete`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ form.csrf_token.current_token }}'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById(`image-${imageId}`).remove();
+                        // تحديث حالة الأزرار
+                        updateButtonStates();
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('حدث خطأ أثناء حذف الصورة');
+                });
+            }
+        });
+    });
+    
+    // تعيين الصورة كرئيسية
+    document.querySelectorAll('.make-primary-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const imageId = this.dataset.imageId;
+            const productId = {{ product.id }};
+            
+            fetch(`/admin/product/${productId}/image/${imageId}/make-primary`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ form.csrf_token.current_token }}'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // تحديث العرض
+                    location.reload();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('حدث خطأ أثناء تعيين الصورة كصورة رئيسية');
+            });
+        });
+    });
+    
+    // تحديث حالة الأزرار
+    function updateButtonStates() {
+        const images = document.querySelectorAll('#current-images .col-4');
+        const deleteButtons = document.querySelectorAll('.delete-image-btn');
+        
+        if (images.length === 1) {
+            deleteButtons.forEach(button => {
+                button.disabled = true;
+            });
+        } else {
+            deleteButtons.forEach(button => {
+                button.disabled = false;
+            });
+        }
+    }
+});
+</script>
+{% endblock %}
+{% endblock %}

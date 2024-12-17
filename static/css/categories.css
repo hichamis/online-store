@@ -1,0 +1,39 @@
+.categories-section {
+    background-color: #f8f9fa;
+}
+
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 110, 253, 0.1);
+    border-radius: 50%;
+}
+
+.category-icon i {
+    color: #0d6efd;
+}
+
+.category-card .btn-outline-primary {
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .btn-outline-primary {
+    background-color: #0d6efd;
+    color: white;
+}

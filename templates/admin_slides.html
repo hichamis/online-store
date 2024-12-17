@@ -1,0 +1,117 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>إدارة السلايدر</h2>
+        <a href="{{ url_for('add_slide') }}" class="btn btn-primary">إضافة سلايد جديد</a>
+    </div>
+
+    <div class="row">
+        {% for slide in slides %}
+        <div class="col-md-4 mb-4" data-slide-id="{{ slide.id }}">
+            <div class="card">
+                {% if slide.image_filename %}
+                <img src="{{ url_for('static', filename='uploads/' + slide.image_filename) }}" class="card-img-top" alt="{{ slide.title }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='images/default-slide.jpg') }}" class="card-img-top" alt="{{ slide.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ slide.title }}</h5>
+                    <p class="card-text">{{ slide.description }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">الترتيب: {{ slide.order }}</small>
+                        {% if slide.active %}
+                        <span class="badge bg-success">نشط</span>
+                        {% else %}
+                        <span class="badge bg-secondary">غير نشط</span>
+                        {% endif %}
+                    </p>
+                    <div class="btn-group" role="group">
+                        <a href="{{ url_for('edit_slide', slide_id=slide.id) }}" class="btn btn-warning">تعديل</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ slide.id }}">
+                            حذف
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteModal{{ slide.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ slide.id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel{{ slide.id }}">تأكيد الحذف</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        هل أنت متأكد من حذف هذا السلايد؟
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteSlide({{ slide.id }})">حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function deleteSlide(slideId) {
+    fetch(`/admin/slides/delete/${slideId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token() }}'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Hide the modal
+            const modal = document.getElementById(`deleteModal${slideId}`);
+            const modalInstance = bootstrap.Modal.getInstance(modal);
+            modalInstance.hide();
+            
+            // Remove the slide card from the page
+            const slideCard = document.querySelector(`[data-slide-id="${slideId}"]`);
+            if (slideCard) {
+                slideCard.remove();
+            }
+            
+            // Show success message
+            showAlert('success', data.message);
+        } else {
+            showAlert('danger', data.message || 'حدث خطأ أثناء حذف السلايد');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showAlert('danger', 'حدث خطأ أثناء حذف السلايد');
+    });
+}
+
+function showAlert(type, message) {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = 'alert';
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    
+    const container = document.querySelector('.container-fluid');
+    container.insertBefore(alertDiv, container.firstChild);
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 5000);
+}
+</script>
+{% endblock %}

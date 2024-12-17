@@ -1,0 +1,991 @@
+2024-12-16 10:21:24,342 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-16 10:21:25,148 INFO: تم بدء تشغيل المتجر [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-16 10:22:01,271 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-16 10:22:08,880 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in C:\Users\hicha\OneDrive\Desktop\projects\app.py:222]
+2024-12-16 14:47:16,109 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:47:18,933 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:47:33,670 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in app.py:222]
+2024-12-16 14:47:47,450 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:48:51,177 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:49:46,837 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:49:49,440 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:50:11,725 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in app.py:222]
+2024-12-16 14:51:59,496 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:51:59,496 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:52:08,075 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-16 14:52:09,345 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-16 14:52:21,390 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in app.py:222]
+2024-12-16 14:52:42,569 ERROR: خطأ غير متوقع: 400 Bad Request: The CSRF token is missing.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+    raise ValidationError("The CSRF token is missing.")
+wtforms.validators.ValidationError: The CSRF token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+ [in app.py:222]
+2024-12-16 14:54:01,789 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:210]
+2024-12-16 14:54:03,722 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 14:54:03,734 INFO: تم بدء تشغيل المتجر [in app.py:210]
+2024-12-16 17:48:11,746 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:211]
+2024-12-16 17:48:13,048 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:211]
+2024-12-16 17:48:18,138 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:223]
+2024-12-16 17:49:08,855 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:49:51,327 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:49:52,844 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:49:58,747 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:50:15,972 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:50:29,682 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:50:34,256 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 545, in login
+    return render_template('login.html', form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:51:46,698 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:51:47,151 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:52:04,460 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:52:05,787 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:52:15,408 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 545, in login
+    return render_template('login.html', form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:52:47,881 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 545, in login
+    return render_template('login.html', form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:54:22,526 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:54:22,526 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:54:22,607 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:55:15,854 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:55:16,961 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:55:21,788 ERROR: خطأ في تسجيل الدخول: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead? [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:548]
+2024-12-16 17:55:21,803 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 546, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 550, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:55:23,843 ERROR: خطأ في تسجيل الدخول: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead? [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:548]
+2024-12-16 17:55:23,861 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 546, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 550, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:55:26,771 ERROR: خطأ في تسجيل الدخول: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead? [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:548]
+2024-12-16 17:55:26,784 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 546, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 550, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:55:32,369 ERROR: خطأ في تسجيل الدخول: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead? [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:548]
+2024-12-16 17:55:32,378 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 546, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 550, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:15,051 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 281, in product_detail
+    return render_template('product_detail.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:19,575 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 281, in product_detail
+    return render_template('product_detail.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:23,341 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:23,459 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:25,122 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 281, in product_detail
+    return render_template('product_detail.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\product_detail.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:56:27,840 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:56:27,840 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:56:27,840 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:57:46,291 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:57:47,681 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:57:55,949 ERROR: خطأ في تسجيل الدخول: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead? [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:556]
+2024-12-16 17:57:55,972 ERROR: Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 554, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:557]
+2024-12-16 17:57:55,981 ERROR: خطأ غير متوقع: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+Traceback (most recent call last):
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 554, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\app.py", line 559, in login
+    return render_template('login.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\login.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\hicha\OneDrive\Desktop\projects\templates\layout.html", line 41, in top-level template code
+    <a class="nav-link" href="{{ url_for('categories') }}">التصنيفات</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'categories'. Did you mean 'manage_categories' instead?
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 17:59:10,877 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:59:12,241 INFO: تم بدء تشغيل المتجر [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:225]
+2024-12-16 17:59:31,185 INFO: محاولة تسجيل دخول للمستخدم: admin [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:528]
+2024-12-16 17:59:31,187 INFO: نتيجة البحث عن المستخدم: <User 1> [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:535]
+2024-12-16 18:00:06,040 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 18:00:06,276 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 18:00:16,974 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 257, in <lambda>
+    view_func=lambda **kw: self_ref().send_static_file(**kw),  # type: ignore # noqa: B950
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 305, in send_static_file
+    return send_from_directory(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 554, in send_from_directory
+    return werkzeug.utils.send_from_directory(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 574, in send_from_directory
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 18:03:01,916 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 18:03:12,446 ERROR: خطأ غير متوقع: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 841, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 450, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hicha\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+ [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:237]
+2024-12-16 18:03:40,562 INFO: محاولة تسجيل دخول للمستخدم: admin [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:528]
+2024-12-16 18:03:40,565 INFO: نتيجة البحث عن المستخدم: <User 1> [in c:\Users\hicha\OneDrive\Desktop\projects\app.py:535]
