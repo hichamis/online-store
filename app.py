@@ -29,6 +29,13 @@ app.config['WTF_CSRF_TIME_LIMIT'] = 3600
 csrf = CSRFProtect()
 csrf.init_app(app)
 
+# تكوين أنواع الملفات المسموح بها
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @app.before_request
 def before_request():
     if not request.is_secure and app.env != "development":
