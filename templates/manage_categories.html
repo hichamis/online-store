@@ -65,15 +65,16 @@
                 <h5 class="modal-title">إضافة قسم جديد</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <form action="{{ url_for('add_category') }}" method="POST">
+            <form method="POST" action="{{ url_for('add_category') }}" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="categoryName" class="form-label">اسم القسم</label>
-                        <input type="text" class="form-control" id="categoryName" name="name" required>
+                        <label for="name" class="form-label">اسم التصنيف</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="categoryDescription" class="form-label">الوصف</label>
-                        <textarea class="form-control" id="categoryDescription" name="description" rows="3"></textarea>
+                        <label for="image" class="form-label">صورة التصنيف</label>
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
                     </div>
                 </div>
                 <div class="modal-footer">

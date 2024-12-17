@@ -23,8 +23,20 @@ app.config['SECRET_KEY'] = 'your-secret-key-here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///store.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# تكوين CSRF
+app.config['WTF_CSRF_SECRET_KEY'] = os.environ.get('WTF_CSRF_SECRET_KEY', 'your-csrf-secret-key')
+app.config['WTF_CSRF_TIME_LIMIT'] = 3600
+csrf = CSRFProtect()
+csrf.init_app(app)
+
+@app.before_request
+def before_request():
+    if not request.is_secure and app.env != "development":
+        url = request.url.replace("http://", "https://", 1)
+        return redirect(url, code=301)
+
 # تكوين حماية CSRF
-csrf = CSRFProtect(app)
+# csrf = CSRFProtect(app)
 
 # تهيئة قاعدة البيانات
 db.init_app(app)
